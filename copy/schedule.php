@@ -29,7 +29,6 @@
     </div>
     <div class="details">
       <ul>
-        <li><span class="time">08:30</span> Organizer setup</li>
         <li><span class="time">09:00</span> Doors open, badges, coffee, and breakfast!</li>
         <li><span class="time">09:30</span> <span class="featured">State of the IndieWeb</span></li>
         <li><span class="time">10:00</span> <span class="featured">Cutting Edge IndieWeb</span></li>
@@ -53,7 +52,6 @@
     </div>
     <div class="details">
       <ul>
-        <li><span class="time">08:30</span> Organizer setup</li>
         <li><span class="time">09:00</span> Doors open, badges, coffee, and breakfast!</li>
         <li><span class="time">09:30</span> <span class="featured">IndieWeb Creating:</span> <br>Open source, design, research</li>
         <li><span class="time">10:00</span> Day 2 session scheduling</li>

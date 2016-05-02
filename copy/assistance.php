@@ -4,3 +4,4 @@
 
 <p>If you think that you could benefit from this fund, please <a href="http://goo.gl/forms/ME7ss6idRB">apply here</a>. You needn't be an IndieWeb expert or master hacker, just an excited participant willing to share and learn.</p>
 
+<p class="smaller">If you would like to contribute to this fund so that we can provide assistance to more individuals from a diverse background, please contact <a href="mailto:aaron@parecki.com">Aaron Parecki</a>.</p>
