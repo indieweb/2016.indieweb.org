@@ -17,6 +17,13 @@
   <script src="/semantic/semantic.min.js"></script>
   <script src="/assets/leaflet/leaflet.js"></script>
   <script src='https://js.tito.io/v1' async></script>
+
+  <meta property="og:url" content="http://2016.indieweb.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="IndieWeb Summit - June 3-5, 2016 - Portland, Oregon">
+  <meta property="og:description" content="The sixth annual gathering for independent web creators of all kinds, from graphic artists, to designers, UX engineers, coders, hackers, to share ideas, actively work on creating for their own personal websites, and build upon each others creations.">
+  <meta property="og:image" content="http://2016.indieweb.org/assets/2014-indieweb-movement.jpg">
+
   <script>
   $(document)
     .ready(function() {
@@ -109,7 +116,7 @@
   </div>
 
 
-  <div class="ui vertical stripe segment" id="about">
+  <div class="ui vertical stripe segment" id="rsvps">
     <div class="ui text container">
       <h3 class="ui header">Indie RSVPs</h3>
 
