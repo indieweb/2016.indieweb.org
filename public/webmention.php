@@ -36,8 +36,8 @@ if(!isset($_POST['source']) || !isset($_POST['target'])) {
 $sourceURL = $_POST['source'];
 $targetURL = $_POST['target'];
 
-if($targetURL != $targetBaseURL.'/nyc2') {
-  error("Webmentions are only accepted for ".$targetBaseURL."/nyc2");
+if($targetURL != $targetBaseURL.'/nyc2' && $targetURL != $targetBaseURL.'/la') {
+  error("Webmentions are only accepted for ".$targetBaseURL."/nyc2 and ".$targetBaseURL."/la");
 }
 
 $response = $http->get($xrayBaseURL.'/parse?url='.urlencode($sourceURL).'&target='.urlencode($targetURL));
@@ -66,7 +66,11 @@ if(!array_key_exists('rsvp', $source)) {
 if(strtolower($source['rsvp']) == 'yes') {
 
   // Store the response data to disk so that it's rendered on the event page
-  $folder = dirname(__FILE__).'/../data/rsvpsnyc2/'.md5($sourceURL);
+  if($targetURL == $targetBaseURL.'/nyc2') {
+    $folder = dirname(__FILE__).'/../data/rsvpsnyc2/'.md5($sourceURL);
+  } elseif($targetURL != $targetBaseURL.'/la') {
+    $folder = dirname(__FILE__).'/../data/la/'.md5($sourceURL);
+  }
   @mkdir($folder);
 
   if($source['author']['photo']) {
