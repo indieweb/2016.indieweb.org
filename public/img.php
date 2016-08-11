@@ -4,7 +4,7 @@ if(!array_key_exists('img', $_GET))
 
 $img = $_GET['img'];
 
-if(!preg_match('/^([a-z0-9]+)\.(jpg|png|gif|ico)$/', $img, $match))
+if(!preg_match('/^([a-z0-9]+)\.(jpg|png|gif|ico|svg)$/', $img, $match))
   die();
 
 $folder = $match[1];
@@ -19,7 +19,14 @@ switch($ext) {
     header('Content-type: image/png'); break;
   case 'ico':
     header('Content-type: image/ico'); break;
+  case 'svg':
+    header('Content-type: image/svg+xml'); break;
 }
 
-readfile(dirname(__FILE__).'/../data/rsvps/'.$folder.'/photo.'.$ext);
+if(array_key_exists('event', $_GET) && in_array($_GET['event'], ['nyc2']))
+  $rsvps = 'rsvps'.$_GET['event'];
+else
+  $rsvps = 'rsvps';
+
+readfile(dirname(__FILE__).'/../data/'.$rsvps.'/'.$folder.'/photo.'.$ext);
 
