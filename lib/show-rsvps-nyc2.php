@@ -1,7 +1,7 @@
 <div class="rsvps">
 <?php
 include(dirname(__FILE__).'/rsvps.php');
-$rsvps = loadRSVPs();
+$rsvps = loadRSVPs('nyc2');
 foreach($rsvps as $rsvp):
   $url = array_key_exists('url', $rsvp['data']) && $rsvp['data']['url'] ? $rsvp['data']['url'] : $rsvp['source'];
   // Don't use the url property unless it's at the same host as the source URL
@@ -15,7 +15,7 @@ foreach($rsvps as $rsvp):
       <?php if($rsvp['author_photo']): ?>
         <?php if($rsvp['data']['author']['url']): ?>
           <a href="<?= $rsvp['data']['author']['url'] ?>">
-            <img src="/img.php?img=<?= $rsvp['author_photo'] ?>" width="48" class="photo">
+            <img src="/img.php?event=nyc2&img=<?= $rsvp['author_photo'] ?>" width="48" class="photo">
           </a>
         <?php endif; ?>
       <?php else: ?>

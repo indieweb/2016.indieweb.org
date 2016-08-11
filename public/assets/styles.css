@@ -112,11 +112,25 @@
   }
 }
 .rsvp .profile-photo {
-  flex: 0;
+  flex: 0 auto;
   margin-right: 0.5em;
 }
 .rsvp .profile-info {
-  flex: 1;
+  flex: 1 auto;
+}
+.rsvp .permalink {
+  word-break: break-all;
+  word-break: break-word;
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+}
+.rsvp .permalink a {
+  color: #aaa;
+}
+.rsvp .permalink a:hover {
+  text-decoration: underline;
 }
 
 .rsvps .rsvp img {

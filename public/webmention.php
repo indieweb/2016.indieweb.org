@@ -1,8 +1,8 @@
 <?php
 require_once('../lib/HTTP.php');
 
-$xrayBaseURL = 'http://xray.dev';
-$targetBaseURL = 'http://2016.indieweb.dev';
+$xrayBaseURL = 'https://xray.p3k.io';
+$targetBaseURL = 'http://2016.indieweb.org';
 
 $http = new HTTP();
 
@@ -15,14 +15,29 @@ function error($msg, $code=400) {
 }
 
 if(!isset($_POST['source']) || !isset($_POST['target'])) {
-  error("Missing source or target properties");
+  if(strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
+    error("Missing source or target properties");
+  } else {
+	?>
+    <link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css">
+<div class="ui container">
+	<h2>Send a Webmention</h2>
+	<form action="/webmention.php" method="post">
+		Source: <input type="url" name="source" value="" style="width:400px;"><br><br>
+		Target: <input type="url" name="target" value="http://2016.indieweb.org/nyc2" style="width:400px;"><br><br>
+		<input type="submit" value="Send Webmention">
+	</form>
+</div>
+	<?php
+	die();
+  }
 }
 
 $sourceURL = $_POST['source'];
 $targetURL = $_POST['target'];
 
-if($targetURL != $targetBaseURL && $targetURL != $targetBaseURL.'/') {
-  error("Webmentions are only accepted for ".$targetBaseURL."/");
+if($targetURL != $targetBaseURL.'/nyc2') {
+  error("Webmentions are only accepted for ".$targetBaseURL."/nyc2");
 }
 
 $response = $http->get($xrayBaseURL.'/parse?url='.urlencode($sourceURL).'&target='.urlencode($targetURL));
@@ -48,10 +63,10 @@ if(!array_key_exists('rsvp', $source)) {
   error("Your post doesn't have an 'rsvp' property");
 }
 
-if($source['rsvp'] == 'yes') {
+if(strtolower($source['rsvp']) == 'yes') {
 
   // Store the response data to disk so that it's rendered on the event page
-  $folder = dirname(__FILE__).'/../data/rsvps/'.md5($sourceURL);
+  $folder = dirname(__FILE__).'/../data/rsvpsnyc2/'.md5($sourceURL);
   @mkdir($folder);
 
   if($source['author']['photo']) {
@@ -59,17 +74,21 @@ if($source['rsvp'] == 'yes') {
     $img = $http->get($source['author']['photo']);
     if($img['body']) {
       file_put_contents($tmp, $img['body']);
-      $type = exif_imagetype($tmp);
-      $ext = false;
-      switch($type) {
-        case IMAGETYPE_GIF:
-          $ext = 'gif'; break;
-        case IMAGETYPE_JPEG:
-          $ext = 'jpg'; break;
-        case IMAGETYPE_PNG:
-          $ext = 'png'; break;
-        case IMAGETYPE_ICO:
-          $ext = 'ico'; break;
+      if(preg_match('/^<\?xml.+<svg.+<\/svg>$/', trim($img['body']))) {
+        $ext = 'svg';
+      } else {
+        $type = exif_imagetype($tmp);
+        $ext = false;
+        switch($type) {
+          case IMAGETYPE_GIF:
+            $ext = 'gif'; break;
+          case IMAGETYPE_JPEG:
+            $ext = 'jpg'; break;
+          case IMAGETYPE_PNG:
+            $ext = 'png'; break;
+          case IMAGETYPE_ICO:
+            $ext = 'ico'; break;
+        }
       }
       if($ext) {
         copy($tmp, $folder . '/photo.'.$ext);
@@ -85,7 +104,7 @@ if($source['rsvp'] == 'yes') {
   ];
   file_put_contents($filename, json_encode($data));
 
-  echo "Thanks! Your RSVP is listed on the event page now! Go ahead and register for the \"Indie RSVP\" ticket!\n";
+  echo "Thanks! Your RSVP is listed on the event page now!\n";
 } else {
   echo "Thanks! Your RSVP was received, but you won't be listed on the event page because your RSVP was not \"yes\"\n";
 }
