@@ -21,6 +21,12 @@
   </li>
   <li>
     <span class="logo">
+      <a href="http://brid.gy/"><img src="https://indiewebcamp.com/sponsor-logos/full/bridgy-logo.png"></a>
+    </span>
+    <span class="description"><a href="http://brid.gy/">Bridgy</a> is an open source project and proxy that implements backfeed as a service. Bridgy sends webmentions for comments, likes, etc. on Facebook, Twitter, Google+, and Instagram.</span>
+  </li>
+  <li>
+    <span class="logo">
       <a href="https://mozilla.org"><img src="https://indiewebcamp.com/sponsor-logos/full/mozilla-logo.png"></a>
     </span>
     <span class="description"></span>
