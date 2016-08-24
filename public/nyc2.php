@@ -119,6 +119,11 @@
       <p>See <a href="https://indiewebcamp.com/RSVP">indiewebcamp.com/RSVP</a> for instructions on how to create an RSVP post. Once you've created the RSVP post which links to this page, send a Webmention and you'll appear below!</p>
 
       <?php include('../lib/show-rsvps-nyc2.php'); ?>
+
+      <h3 class="ui header">Tickets</h3>
+
+      <p>The people below registered for a ticket through the registration system.</p>
+      <?php include('../lib/show-tito-tickets-nyc2.php'); ?>
     </div>
   </div>
 
