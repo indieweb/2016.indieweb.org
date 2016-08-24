@@ -15,11 +15,13 @@ foreach($rsvps as $rsvp) {
 
 if(file_exists(dirname(__FILE__).'/../data/rsvpsnyc2/tickets.json')):
 $tickets = json_decode(file_get_contents(dirname(__FILE__).'/../data/rsvpsnyc2/tickets.json'));
+$hidden = 0;
 foreach($tickets as $ticket):
-  if($ticket->show):
+  if($ticket->show == 'yes'):
     if(!in_array($ticket->website, $websites)):
-      if($ticket->website)
+      if($ticket->website) {
         $websites[] = $ticket->website;
+      }
     ?>
     <div class="rsvp">
       <div class="profile-photo">
@@ -37,9 +39,16 @@ foreach($tickets as $ticket):
     </div>
     <?php
     endif;
+  else:
+    $hidden++;
   endif;
 endforeach;
 endif;
 ?>
+  <div class="rsvp">
+    <div class="profile-info">
+      and <?= $hidden ?> private registrations
+    </div>
+  </div>
 </div>
 <div style="clear:both;"></div>
