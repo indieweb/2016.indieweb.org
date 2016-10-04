@@ -1,9 +1,9 @@
-<p>Special thanks to our sponsors who make it possible to provide food and space for IndieWebCamp events</p>
+<p>Special thanks to our sponsors who make it possible to provide space, food, and support for IndieWebCamp events</p>
 
 <ul>
   <li>
     <span class="logo">
-      <a href="http://sovrn.com/"><img src="https://indiewebcamp.com/sponsor-logos/full/sovrn-logo.png"></a>
+      <a href="https://pivotal.io/locations/losangeles"><img src="https://indiewebcamp.com/sponsor-logos/full/pivotal-full.png"></a>
     </span>
     <span class="description"></span>
   </li>
