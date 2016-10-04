@@ -20,8 +20,8 @@
 
   <meta property="og:url" content="http://2016.indieweb.org/la">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="IndieWebCamp LA - August 27-28, 2016 - New York">
-  <meta property="og:description" content="IndieWebCamp LA 2016 is a two-day maker event for creating and/or improving your personal website. All levels welcome! One of several 2016 IndieWebCamps and the fourth IndieWebCamp in NYC!">
+  <meta property="og:title" content="IndieWebCamp LA - November 5-6, 2016 - Los Angeles">
+  <meta property="og:description" content="IndieWebCamp LA 2016 is a two-day maker event for creating and/or improving your personal website. All levels welcome! One of several 2016 IndieWebCamps and the second IndieWebCamp in LA!">
   <meta property="og:image" content="http://2016.indieweb.org/assets/2014-indieweb-movement.jpg">
 
   <script>
@@ -91,11 +91,11 @@
         IndieWebCamp LA 2016
       </h1>
 
-      <h2>August 27-28, 2016</h2>
-      <h2>New York</h2>
+      <h2>November 5-6, 2016</h2>
+      <h2>Los Angeles</h2>
 
 
-      <p class="summary">IndieWebCamp LA 2016 is a two-day maker event for creating and/or improving your personal website. All levels welcome! One of several 2016 IndieWebCamps and the fourth IndieWebCamp in NYC!</p>
+      <p class="summary">IndieWebCamp LA 2016 is a two-day maker event for creating and/or improving your personal website. All levels welcome! One of several 2016 IndieWebCamps.</p>
 
     </div>
 
@@ -163,7 +163,7 @@
 
   <div class="ui inverted vertical footer segment gold-bkg">
     <div class="ui container">
-      <p>IndieWebCamp LA 2016 &bull; August 27-28, 2016 &bull; New York</p>
+      <p>IndieWebCamp LA 2016 &bull; November 5-6, 2016 &bull; Los Angeles</p>
       <ul>
         <li><a href="https://indiewebcamp.com/">IndieWebCamp Home Page</a></li>
         <li><a href="https://indiewebcamp.com/2016/LA">Event Details</a></li>
@@ -177,7 +177,7 @@
 <script>
 var map = L.map('map', {
   scrollWheelZoom: false,
-  center: [40.744675, -73.984865],
+  center: [34.0156579, -118.4973788],
   zoom: 13
 });
 
@@ -187,8 +187,8 @@ var layer = L.tileLayer(tileProtocol+'//{s}.basemaps.cartocdn.com/light_all/{z}/
 });
 map.addLayer(layer);
 
-var marker = L.marker([40.744675, -73.984865]).addTo(map);
-marker.bindPopup("<b>Dalberg Global Development Advisors</b><br>99 Madison Ave, Floor 17<br>New York, NY").openPopup();
+var marker = L.marker([34.0156579, -118.4973788]).addTo(map);
+marker.bindPopup("<b>Pivotal</b><br>1333 2nd St<br>Santa Monica, CA 90401").openPopup();
 
 $(function(){
   $(".popup").popup();
