@@ -1,12 +1,12 @@
 <p>
-  <i class="calendar icon"></i> <time class="dt-start" datetime="2016-08-27">August 27</time>-<time class="dt-end" datetime="2016-08-28">28</time>, 2016<br>
-  <i class="marker icon"></i> <span class="h-card p-location"><span class="p-name">Dalberg Global Development Advisors</span><br> <span class="p-street-address">99 Madison Ave, Floor 17</span>, <span class="p-locality">New York</span>, <span class="p-region">NY</span></span>
+  <i class="calendar icon"></i> <time class="dt-start" datetime="2016-11-05">November 5</time>-<time class="dt-end" datetime="2016-11-06">6</time>, 2016<br>
+  <i class="marker icon"></i> <span class="h-card p-location"><span class="p-name">Pivotal</span><br> <span class="p-street-address">1333 2nd Street, Suite 200</span>, <span class="p-locality">Santa Monica</span>, <span class="p-region">CA</span></span>
 </p>
 
 <div class="schedule-grid">
   <div class="day">
     <div class="header orange-bkg">
-      Saturday, August 28<br>
+      Saturday, November 5<br>
       <span class="featured">Discussions</span>
     </div>
     <div class="summary">
@@ -27,7 +27,7 @@
   </div>
   <div class="day">
     <div class="header red-bkg">
-      Sunday, August 29<br>
+      Sunday, November 6<br>
       <span class="featured">Create, Hack, Demo!</span>
     </div>
     <div class="summary">
@@ -50,5 +50,5 @@
 </div>
 
 <br>
-<p>Schedule is subject to change. View the <a href="https://indiewebcamp.com/2016/NYC2/Schedule">full schedule grid</a> on the IndieWebCamp wiki for the latest updates.</p>
+<p>Schedule is subject to change. View the <a href="https://indiewebcamp.com/2016/LA/Schedule">full schedule grid</a> on the IndieWebCamp wiki for the latest updates.</p>
 
